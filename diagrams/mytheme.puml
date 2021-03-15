@@ -1,0 +1,37 @@
+''
+'' My theme
+''
+'' Author: Waldemar
+'' Copyright (c) 2021 by Waldemar Schäfer
+
+!$THEME = "wschaef"
+
+!if %not(%variable_exists("$BGCOLOR"))
+!$BGCOLOR = "transparent"
+!endif
+
+skinparam backgroundColor $BGCOLOR
+
+!$DARK = "#2d4059"
+!$LIGHT = "#F2FAFF"
+!$ACCENT = "#0096FB"
+!$ACCENT2 = "#FFF7D6"
+
+hide footbox
+
+skinparam sequence {
+ArrowColor $DARK
+LifeLineBorderColor $DARK
+LifeLineBackgroundColor $DARK
+StereotypeFontColor $ACCENT2
+
+ParticipantBorderColor $DARK
+ParticipantBackgroundColor $DARK
+ParticipantFontSize 17
+ParticipantFontColor $LIGHT
+
+ActorBorderColor $DARK
+ActorBackgroundColor $DARK
+ActorFontSize 17
+ActorFontColor $LIGHT
+}
