@@ -1,5 +1,7 @@
 @startuml
+
 !include https://raw.githubusercontent.com/wschaef/useful/master/diagrams/mytheme.puml
+
 participant operator <<local machine>>
 participant "AWS\nKMS" as kms <<server>>
 participant "git\nserver" as git <<server>>
