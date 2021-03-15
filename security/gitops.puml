@@ -1,19 +1,20 @@
 @startuml
-actor operator
-participant "Mozilla\nSOPS" as sops
-participant "AWS\nKMS" as kms
-participant git
-participant "CI/CD\ntooling" as cicd
-participant "execution\nenvironment" as exe
+!include https://raw.githubusercontent.com/bschwarz/puml-themes/master/themes/bluegray/puml-theme-bluegray.puml
+participant operator <<local machine>>
+participant "AWS\nKMS" as kms <<server>>
+participant "git\nserver" as git <<server>>
+participant "CI/CD\ntooling" as cicd <<server>>
+participant "execution\nenvironment" as exe <<server>>
 
-operator->sops: encrypt plain text file
-sops->kms: use KMS key for encryption
-kms->sops: encrypted file
-sops->operator: encrypted file
+operator->operator: install sops
+operator->operator: sops: encrypt plain text file
+activate operator
 
+operator->kms: sops: use KMS key for encryption
+kms->operator: sops: encrypted file
+operator->operator: encrypted file
 
-exe->exe: install sops
-
+deactivate operator
 
 operator->git: commit encrypted file
 git-->cicd: trigger
@@ -21,6 +22,15 @@ cicd->git: checkout file
 git->cicd: encrypted file
 cicd->exe: encrypted file
 
+exe->exe: install sops
+exe->exe: sops: encrypt plain text file
+activate exe
 
-exe -> exe: decrypt file and set env vars
+exe->kms: sops: use KMS key for decryption
+kms->exe: sops: decrypted file
+exe->exe: decrypted file
+
+deactivate exe
+
+exe -> exe: set secrete as env var.
 @enduml
