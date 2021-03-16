@@ -39,3 +39,5 @@
 
 ## Trainings
 * https://training.play-with-docker.com/
+* https://www.docker.com/play-with-docker
+
