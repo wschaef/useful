@@ -3,8 +3,10 @@
 
 ## Creating Pods
 Launch a single instance:
-
+```bash
 kubectl run nginx --image=nginx:1.10.0
+```
+
 Get pods
 ```bash
 kubectl get pods
