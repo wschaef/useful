@@ -101,4 +101,6 @@ kubectl get <resource> <resourcename> -o jsonpath='{<path inside the json starti
 e.g. get external ip of a service
 ```bash
 kubectl get services <name of service> -o jsonpath='{.status.loadBalancer.ingress[0].ip}'
+# and assign it to a variable
+extIp=$(kubectl get services frontend -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 ```
