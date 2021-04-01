@@ -86,3 +86,19 @@ When you’re done with the interactive shell be sure to logout.
 ```bash
 exit
 ```
+
+## Other
+
+get a specific value from outputs
+```bash
+# show the whole response
+kubectl get <resource> <resourcename> -o json
+
+# get a specific part e.g. a value from response
+kubectl get <resource> <resourcename> -o jsonpath='{<path inside the json starting with a .>}'
+```
+
+e.g. get external ip of a service
+```bash
+kubectl get services <name of service> -o jsonpath='{.status.loadBalancer.ingress[0].ip}'
+```
