@@ -4,3 +4,6 @@ https://datatracker.ietf.org/doc/html/draft-ietf-oauth-security-topics-16#sectio
 
 ## Good overview on oidc topics
 https://www.oauth.com/oauth2-servers/map-oauth-2-0-specs/
+
+## Oauth 2 
+https://oauth.net/2/
