@@ -2,4 +2,6 @@
 
 * better overview on usage of disk http://grandperspectiv.sourceforge.net
 * window management like in Windows https://www.ifun.de/geheimtipp-rectangle-freier-fenstermanager-fuer-den-mac-146147/
+* terminal customization https://github.com/romkatv/powerlevel10k
+* better terminal iterm2
 * 
