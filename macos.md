@@ -5,3 +5,6 @@
 * terminal customization https://github.com/romkatv/powerlevel10k
 * better terminal iterm2
 * check if a app or tool is compatible with M1 https://doesitarm.com/
+
+* automation tool for text replacement https://espanso.org/
+
